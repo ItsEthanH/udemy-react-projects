@@ -1,11 +1,11 @@
 import { useContext } from 'react';
-import cartContext from '../store/cartContext';
+import cartButtonContext from '../store/cartButtonContext';
 import Modal from '../UI/Modal';
 
 import classes from './Cart.module.css';
 
 function Cart() {
-  let ctx = useContext(cartContext);
+  let ctx = useContext(cartButtonContext);
   let cartList = [{ id: 't1', name: 'Sushi', amount: 2, price: 12.99 }];
 
   const cartItems = cartList.map((item) => <li>{item.name}</li>);

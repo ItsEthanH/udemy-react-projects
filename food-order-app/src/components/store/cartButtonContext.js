@@ -1,9 +1,9 @@
 import { createContext } from 'react';
 
-const cartContext = createContext({
+const cartButtonContext = createContext({
   isCartShown: false,
   showCartHandler: () => {},
   hideCartHandler: () => {},
 });
 
-export default cartContext;
+export default cartButtonContext;
