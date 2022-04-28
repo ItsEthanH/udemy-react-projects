@@ -3,7 +3,7 @@ import reactDom from 'react-dom';
 
 import classes from './Modal.module.css';
 
-function Backdrop(props) {
+function Backdrop() {
   return <div className={classes.backdrop} />;
 }
 
@@ -15,7 +15,7 @@ function ModalOverlay(props) {
   );
 }
 
-let portalOverlays = document.getElementById('overlays');
+const portalOverlays = document.getElementById('overlays');
 function Modal(props) {
   return (
     <react.Fragment>
