@@ -11,7 +11,7 @@ function MealItemForm(props) {
   function submitHandler(event) {
     event.preventDefault();
 
-    props.meal.quantity = amountInputRef.current.value;
+    props.meal.quantity = +amountInputRef.current.value;
     contentsContext.addItemHandler(props.meal);
   }
 

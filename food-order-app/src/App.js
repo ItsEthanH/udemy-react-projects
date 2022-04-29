@@ -32,10 +32,11 @@ function cartReducer(state, action) {
         ...existingItem,
         quantity: existingItem.quantity + action.meal.quantity,
       };
+
       updatedItems = [...state.items];
       updatedItems[existingItemIndex] = updatedItem;
     } else {
-      updatedItems = state.items.concat(action.meal);
+      updatedItems = state.items.concat({ ...action.meal });
     }
 
     return {
