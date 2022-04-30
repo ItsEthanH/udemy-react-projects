@@ -11,9 +11,14 @@ function Cart() {
   let buttonContext = useContext(cartButtonContext);
   let contentsContext = useContext(cartContentsContext);
 
-  function cartItemAddHandler() {}
+  function cartItemAddHandler(item) {
+    const cartItem = { ...item, quantity: 1 };
+    contentsContext.addItemHandler(cartItem);
+  }
 
-  function cartItemRemoveHandler() {}
+  function cartItemRemoveHandler(id) {
+    contentsContext.removeItemHandler(id);
+  }
 
   const cartItems = contentsContext.items.map((item) => (
     <li key={item.id}>
@@ -21,8 +26,8 @@ function Cart() {
         name={item.name}
         price={item.price}
         amount={item.quantity}
-        onAdd={cartItemAddHandler.bind(null, item.id)}
-        onRemove={cartItemRemoveHandler.bind(null, item)}
+        onAdd={cartItemAddHandler.bind(null, item)}
+        onRemove={cartItemRemoveHandler.bind(null, item.id)}
       />
     </li>
   ));
