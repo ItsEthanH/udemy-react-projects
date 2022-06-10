@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
+
 import useHttp from '../../hooks/use-http';
 import { getAllComments } from '../../lib/api';
 import LoadingSpinner from '../ui/LoadingSpinner';
@@ -12,6 +13,7 @@ const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
   const params = useParams();
   const quoteId = params.quoteId;
+  console.log(params);
 
   const { sendRequest, status, data: loadedComments } = useHttp(getAllComments);
 
