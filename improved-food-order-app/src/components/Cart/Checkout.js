@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import useInput from '../../hooks/useInput';
 
 import CheckoutInput from './CheckoutInput';
 
 import classes from './Checkout.module.css';
+import CartContext from '../../store/cart-context';
 
 function Checkout(props) {
   const [formIsSent, setFormIsSent] = useState(false);
+  const cartCtx = useContext(CartContext);
+
   const {
     value: nameValue,
     isValid: nameIsValid,
@@ -47,7 +50,7 @@ function Checkout(props) {
     reset: postcodeReset,
   } = useInput((value) => value.trim() !== '');
 
-  function submitHandler(event) {
+  async function submitHandler(event) {
     event.preventDefault();
 
     // sets all inputs to 'touched', to highlight errors for inputs which may have not been touched yet
@@ -63,57 +66,82 @@ function Checkout(props) {
       return;
     }
 
-    console.log(nameValue);
-    console.log(streetValue);
-    console.log(cityValue);
-    console.log(postcodeValue);
+    try {
+      const response = await fetch(
+        'https://react-meals-fe8e6-default-rtdb.europe-west1.firebasedatabase.app/orders.json',
+        {
+          method: 'POST',
+          body: JSON.stringify({
+            order: cartCtx.items,
+            name: nameValue,
+            street: streetValue,
+            city: cityValue,
+            postcode: postcodeValue,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(
+          'Something went wrong. Please contact the app developers so they can learn how to code!'
+        );
+      }
+    } catch (err) {
+      setFormIsSent(err.message);
+      return;
+    }
 
     nameReset();
     streetReset();
     cityReset();
     postcodeReset();
-    setFormIsSent(true);
+    cartCtx.clearCart();
+    setFormIsSent('Your order has been submitted. Thank you!');
   }
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <CheckoutInput
-        id="name"
-        label="Name"
-        value={nameValue}
-        onChange={nameValueChangeHandler}
-        onBlur={nameInputBlurHandler}
-        hasError={nameHasError}
-        errorMessage="Please enter a name"
-      />
-      <CheckoutInput
-        id="street"
-        label="Street"
-        value={streetValue}
-        onChange={streetValueChangeHandler}
-        onBlur={streetInputBlurHandler}
-        hasError={streetHasError}
-        errorMessage="Please enter a street"
-      />
-      <CheckoutInput
-        id="city"
-        label="City"
-        value={cityValue}
-        onChange={cityValueChangeHandler}
-        onBlur={cityInputBlurHandler}
-        hasError={cityHasError}
-        errorMessage="Please enter a city"
-      />
-      <CheckoutInput
-        id="postcode"
-        label="Postcode"
-        value={postcodeValue}
-        onChange={postcodeValueChangeHandler}
-        onBlur={postcodeInputBlurHandler}
-        hasError={postcodeHasError}
-        errorMessage="Please enter a postcode"
-      />
-      {formIsSent && <p>Your order has been submitted. Thank you!</p>}
+      {!formIsSent && (
+        <>
+          <CheckoutInput
+            id="name"
+            label="Name"
+            value={nameValue}
+            onChange={nameValueChangeHandler}
+            onBlur={nameInputBlurHandler}
+            hasError={nameHasError}
+            errorMessage="Please enter a name"
+          />
+          <CheckoutInput
+            id="street"
+            label="Street"
+            value={streetValue}
+            onChange={streetValueChangeHandler}
+            onBlur={streetInputBlurHandler}
+            hasError={streetHasError}
+            errorMessage="Please enter a street"
+          />
+          <CheckoutInput
+            id="city"
+            label="City"
+            value={cityValue}
+            onChange={cityValueChangeHandler}
+            onBlur={cityInputBlurHandler}
+            hasError={cityHasError}
+            errorMessage="Please enter a city"
+          />
+          <CheckoutInput
+            id="postcode"
+            label="Postcode"
+            value={postcodeValue}
+            onChange={postcodeValueChangeHandler}
+            onBlur={postcodeInputBlurHandler}
+            hasError={postcodeHasError}
+            errorMessage="Please enter a postcode"
+          />
+        </>
+      )}
+      {formIsSent && <p className="centered">{formIsSent}</p>}
       <div className={classes.actions}>
         <button type="button" onClick={props.onCancel}>
           Cancel
