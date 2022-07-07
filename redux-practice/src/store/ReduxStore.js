@@ -1,50 +1,14 @@
-// THE EASIER WAY OF USING REDUX, USING REDUX TOOLKIT *yay*
-import { createSlice, configureStore } from '@reduxjs/toolkit';
-
-const initialAuthState = { isAuthenticated: false };
-const authSlice = createSlice({
-  name: 'auth',
-  initialState: initialAuthState,
-  reducers: {
-    login(state) {
-      state.isAuthenticated = true;
-    },
-    logout(state) {
-      state.isAuthenticated = false;
-    },
-  },
-});
-
-const initialCounterState = { value: 0, showCounter: true };
-const counterSlice = createSlice({
-  name: 'counter',
-  initialState: initialCounterState,
-  reducers: {
-    increment(state) {
-      state.value++;
-    },
-    increase(state, action) {
-      state.value += action.payload;
-    },
-    decrement(state) {
-      state.value--;
-    },
-    toggleCounter(state) {
-      state.showCounter = !state.showCounter;
-    },
-  },
-});
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from './auth';
+import counterReducer from './counter';
 
 const store = configureStore({
-  reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
+  reducer: { counter: counterReducer, auth: authReducer },
 });
 
 export default store;
-export const counterActions = counterSlice.actions;
-export const authActions = authSlice.actions;
 
 // THE TRADITIONAL WAY OF USING REDUX, WITHOUT REDUX TOOLKIT *yawn*
-
 // import { createStore } from 'redux';
 
 // function counterReducer(state = initialState, action) {
