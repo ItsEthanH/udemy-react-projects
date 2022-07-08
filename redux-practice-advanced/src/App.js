@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { uiActions } from './store/ui';
+import { cartActions } from './store/cart';
 
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import Notification from './components/UI/Notification';
+
+const url =
+  'https://redux-cart-c7adf-default-rtdb.europe-west1.firebasedatabase.app/cart.json';
 
 let isInit = true;
 
@@ -15,6 +19,7 @@ function App() {
   const cart = useSelector((state) => state.cart);
   const notification = useSelector((state) => state.ui.notification);
 
+  // sends cart data to backend upon cart change
   useEffect(() => {
     async function sendCartData() {
       dispatch(
@@ -25,14 +30,10 @@ function App() {
         })
       );
 
-      const response = await fetch(
-        'https://redux-cart-c7adf-default-rtdb.europe-west1.firebasedatabase.app/cart.json',
-        {
-          method: 'PUT',
-          body: JSON.stringify(cart),
-        }
-      );
-
+      const response = await fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify(cart),
+      });
       if (!response.ok) {
         throw new Error('Sending cart data failed!');
       }
@@ -59,6 +60,34 @@ function App() {
       });
     });
   }, [cart, dispatch]);
+
+  //gets cart data when the app first loads
+  useEffect(() => {
+    async function getCartData() {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error('Could not fetch cart data!');
+      }
+
+      const data = await response.json();
+
+      await console.log(data);
+      return data;
+    }
+
+    getCartData()
+      .then((data) => {
+        dispatch(cartActions.replaceCart(data));
+      })
+      .catch(() => {
+        uiActions.showNotification({
+          status: 'error',
+          title: 'Error!',
+          message: 'Sending cart data failed!',
+        });
+      });
+  }, [dispatch]);
 
   return (
     <>
