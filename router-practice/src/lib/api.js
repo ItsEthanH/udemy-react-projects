@@ -1,5 +1,5 @@
 const FIREBASE_DOMAIN =
-  'https://router-practice-d2db8-default-rtdb.europe-west1.firebasedatabase.app';
+  'https://router-practice-24ea9-default-rtdb.europe-west1.firebasedatabase.app';
 
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);
