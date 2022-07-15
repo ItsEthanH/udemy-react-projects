@@ -1,6 +1,6 @@
 .detail {
   text-align: center;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 50%);
+  padding-bottom: 1rem;
 }
 
 .detail img {
