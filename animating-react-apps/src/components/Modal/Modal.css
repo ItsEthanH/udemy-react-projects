@@ -12,12 +12,12 @@
   width: 50%;
 }
 
-.ModalOpen {
+.fade-slide-enter-active {
   animation: openModal 0.4s ease-out forwards;
 }
 
-.ModalClosed {
-  animation: closeModal 0.4s ease-out forwards;
+.fade-slide-exit-active {
+  animation: closeModal 1s ease-out forwards;
 }
 
 @keyframes openModal {
