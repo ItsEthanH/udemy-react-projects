@@ -240,3 +240,78 @@ Learning about the alternative to using React Context - React Redux! Using Redux
 Taking Redux to the next level by introducing asynchronous code. Using Redux with useEffect and Thunks covered by creating a small shop complete with cart logic.
 
 <hr />
+
+### Section 20: React Router
+<a name="s20" />
+
+*Project: [Simple Routing](./20a-react-router)*
+
+*Project: [Advanced Routing](./20b-react-router-practice)*
+
+Learning how to give a multi-page experience in a SPA, with React Router. Two projects were given for this project. The first one is a simple routing application, with very little content. The second, more advanced one, is a quote page, making use of a Firebase backend to allow users to submit and read quotes posted by other users. Project won't work due to backend not in use.
+
+<hr />
+
+### Section 21: Deploying React Apps
+<a name="s21" />
+
+*Project: None*
+
+Demonstration of how to deploy React applications to the web. Mostly theory, so no project uploaded, however, the theory from this project was used to deploy my brothers photography page [(repo here)](https://github.com/ItsEthanH/euans-photography-site)
+
+<hr />
+
+### Section 22: Authentication with React
+<a name="s22" />
+
+*Project: [Advanced Authenticaion App](./22-authentication-with-jwts)*
+
+Using Firebase to create users and provide authentication with JWTs. Combined with React Context and Router to allow certain routes to be protected and to facilitate the possibility of a user changing their password. Project won't work due to backend not in use.
+
+<hr />
+
+### Section 23: Introduction to Next.js
+<a name="s23" />
+
+*Project: [Meetup Project](./23-nextjs-crash-course)*
+
+Using Next.js and MongoDB to create a fullstack-like meetup application, receiving meetup data from user forms, and displaying them using the SSG capabilities of Next.js.
+
+<hr />
+
+
+### Section 24: Animating React Apps
+<a name="s24" />
+
+*Project: [Animation Playgroud](./24-animating-react-apps)*
+
+Experimenting with CSS Transitions and the third-party library ReactTransitionGroup to improve the UX of React Applications. Project is a collection of all the things I discovered during this module
+
+<hr />
+
+### Section 25: Replacing Redux with React Hooks
+<a name="s25" />
+
+*Project: None*
+
+An optional module made for React 16.8, guiding students how to convert old Redux projects to use the Context API 16.8 brought. As this did not apply to me, this module was skipped.
+
+<hr />
+
+### Section 26: Testing React Apps
+<a name="s26" />
+
+*Project: [Testing Playground](./26-testing-react-apps)*
+
+Using Jest to use unit tests to test React apps. Unit tests & suites, testing async code and mock functions were all used and experimented with in the playground project
+
+<hr />
+
+### Section 27: React + TypeScript
+<a name="s27" />
+
+*Project: [TypeScript Todos](./27-react-with-typescript)*
+
+Using TypeScript to provide a strongly-typed experience to JavaScript + React. Project is a simple todo app to practice my TypeScript skills
+
+<hr />
