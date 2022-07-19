@@ -9,6 +9,8 @@ Note that not every section has a project, as some sections are more theoretical
 
 All projects can be cloned and ran from VS Code, as long as all dependencies are installed using ```npm install```. Note that some projects are built using Firebase or MongoDB as dummy backends. These projects will no longer work, due to the backends now being taken down.
 
+<hr />
+
 <details>
 <summary><h1>Table of Contents</h1></summary>
 
@@ -73,28 +75,132 @@ All projects can be cloned and ran from VS Code, as long as all dependencies are
 
 *Project: None*
 
-Overview of React, its uses, and how to use the course
+Overview of React, its uses, and how to use the course. No project given.
 
+<hr />
 
 ### Section 2: JavaScript Refresher
 <a name="s2" />
 
 *Project: None*
 
-A refresher of JavaScript fundamentals, such as functions, importing/exporting, OOP and reference vs primitive types
+A refresher of JavaScript fundamentals, such as functions, importing/exporting, OOP and reference vs primitive types. Small worked examples given, but not needed in this repo
 
+<hr />
 
 ### Section 3: React Basics & Components
 <a name="s3" />
 
 *Project: [Budget Tracker](./03-react-components-and-hooks)*
 
-Introduction to JSX, basic styling and handling data through the use of props
+Introduction to JSX, basic styling and handling data through the use of props. Began budget tracker project.
 
+<hr />
 
 ### Section 4: React State & Events
 <a name="s4" />
 
 *Project: [Budget Tracker (cont.)](./03-react-components-and-hooks)*
 
-Working with state, handling events and basic form handling
+Working with state, handling events and basic form handling. Added form to budget tracker, allowing users to enter their own content.
+
+<hr />
+
+### Section 5: Rendering Lists & Conditional Content
+<a name="s5" />
+
+*Project: [Budget Tracker (cont.)](./03-react-components-and-hooks)*
+
+Rendering lists with Array.map(), using keys in lists and conditional rendering. Added a chart to budget tracker to visualise data.
+
+<hr />
+
+### Section 6: Styling React Components
+<a name="s6" />
+
+*Project: [Todo List](./06-styling-components)*
+
+Setting styles inline, using styled components and using CSS modules. Created a basic todo app exploring these three possibilities.
+
+<hr />
+
+### Section 7: Debugging React Apps
+<a name="s7" />
+
+*Project: None*
+
+How to best use the Dev Tools to get to the bottom of issues in React. No project given.
+
+<hr />
+
+### Section 8: Practice Project - A Complete Project with React
+<a name="s8" />
+
+*Project: [Users and Ages](./08-recap-and-practice)*
+
+Consolidating knowledge up to this point by creating an application with a form and list. The form takes a name and age, while the list presents all the data in a stateful way. Error handling included.
+
+<hr />
+
+### Section 9: Fragments, Portals and Refs
+<a name="s9" />
+
+*Project: None*
+
+Theory and practice of fragments, portals and refs. Small module, so project not included.
+
+<hr />
+
+### Section 10: Side Effects, Reducers and Context
+<a name="s10" />
+
+*Project: [Basic Authentication Page](./10-advanced-react-hooks)*
+
+Working with more advanced react hooks, such as useEffect, useReducer and useContext. All of these are combined to create a basic authentication page, complete with form and error handling, and a dynamic UI.
+
+<hr />
+
+### Section 11: Practice Project - Food Order App
+<a name="s11" />
+
+*Project: [Food Order App](./11-food-order-app)*
+
+The second project, using knowledge up to this point. This module focused on the creation of a food order app, with a menu and cart. This project gets improved upon in [Section 17](#s17).
+
+<hr />
+
+### Section 12: Behind the Scenes of React
+<a name="s12" />
+
+*Project: None*
+
+Learning about the component lifecycle, and how useMemo and useCallback can be used to optimise applications. Small module, so project not included.
+
+<hr />
+
+### Section 13: Class-Based Components
+<a name="s13" />
+
+*Project: None*
+
+Learning about the alternative way to write functions, making use of lifecycle methods in place of hooks. Small module, so project not included.
+
+<hr />
+
+### Section 14: Sending HTTP Requests
+<a name="s14" />
+
+*Project: [Star Wars Database](./14-sending-http-requests)*
+
+How to make HTTP requests in a react context, utilising the Star Wars API to provide data to conditionally render in a React application
+
+<hr />
+
+### Section 15: Building Custom Hooks
+<a name="s15" />
+
+*Project: [Star Wars Database](./14-sending-http-requests)*
+
+How to make HTTP requests in a react context, utilising the Star Wars API to provide data to conditionally render in a React application
+
+<hr />
