@@ -199,8 +199,44 @@ How to make HTTP requests in a react context, utilising the Star Wars API to pro
 ### Section 15: Building Custom Hooks
 <a name="s15" />
 
-*Project: [Star Wars Database](./14-sending-http-requests)*
+*Project: [Improved Todo List](./15-building-custom-hooks)*
 
-How to make HTTP requests in a react context, utilising the Star Wars API to provide data to conditionally render in a React application
+How to reuse stateful logic through the creation of custom hooks. Project uses a custom useFetch hook to GET and POST requests to a firebase backend. Project won't work due to backend not in use
+
+<hr />
+
+### Section 16: Working with Forms and User Input
+<a name="s16" />
+
+*Project: [Advanced Authentication Form](./16-form-handling)*
+
+Using custom hooks to handle different form states, providing great user feedback.
+
+<hr />
+
+### Section 17: Practice Project - Adding HTTP & Forms to the Food Order App
+<a name="s17" />
+
+*Project: [Food Order App - Improved!](./17-improved-food-order-app)*
+
+Moving menu to a Firebase backend to make use of GET HTTP requests. Orders are now POSTed to the same backend. Form validation and handling also included. Project won't work due to backend not in use.
+
+<hr />
+
+### Section 18: Introduction to Redux
+<a name="s18" />
+
+*Project: [Authentication + Counter with Redux](./18-redux-basics)*
+
+Learning about the alternative to using React Context - React Redux! Using Redux traditionally, with Redux Toolkit and with class-based components was all covered. Project is a combined authentication form and counter, with all state handled centrally with Redux.
+
+<hr />
+
+### Section 19: Advanced Redux
+<a name="s19" />
+
+*Project: [Redux Cart](./19-redux-advanced)*
+
+Taking Redux to the next level by introducing asynchronous code. Using Redux with useEffect and Thunks covered by creating a small shop complete with cart logic.
 
 <hr />
